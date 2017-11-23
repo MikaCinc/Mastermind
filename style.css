@@ -1,0 +1,313 @@
+/* Predefinisane klase: */
+
+/* BUTTONS: */
+.button_grey {
+	background-color: black;
+	color: grey;
+    border: 1px solid grey;
+    transition-duration: 0.4s;
+}
+
+.button_grey:hover {
+	background-color: grey;
+    color: white;
+    border: 1px solid grey;
+}
+
+
+.button_green {
+	font-size: 14px;
+	background-color: black;
+	color: green;
+    border: 1px solid green;
+    transition-duration: 0.4s;
+}
+
+.button_green:hover {
+	font-size: 14px;
+	background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
+.button_red {
+	font-size: 14px;
+	background-color: black;
+	color: red;
+    border: 1px solid red;
+    transition-duration: 0.4s;
+}
+
+.button_red:hover {
+	font-size: 14px;
+	background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.button_blue {
+	font-size: 14px;
+	background-color: black;
+	color: blue;
+    border: 1px solid blue;
+    transition-duration: 0.4s;
+}
+
+.button_blue:hover {
+	background-color: blue;
+    color: white;
+    border: 1px solid blue;
+}
+
+.button_purple {
+	font-size: 14px;
+	background-color: black;
+	color: purple;
+    border: 1px solid purple;
+    transition-duration: 0.4s;
+}
+
+.button_purple:hover {
+	font-size: 14px;
+	background-color: purple;
+    color: white;
+    border: 1px solid purple;
+}
+
+.button_orange {
+	font-size: 14px;
+	background-color: transparent;
+	color: orange;
+    border: 1px solid orange;
+    transition-duration: 0.4s;
+}
+
+.button_orange:hover {
+	background-color: orange;
+    color: white;
+    border: 1px solid orange;
+}
+
+.button_cyan {
+	font-size: 14px;
+	background-color: transparent;
+	color: cyan;
+    border: 1px solid cyan;
+    transition-duration: 0.4s;
+}
+
+.button_cyan:hover {
+	background-color: cyan;
+    color: black;
+    border: 1px solid cyan;
+}
+
+/* INPUT */
+.default_input {
+	height: 18pt;
+	transition-duration: 0.4s;
+	color: #0f0;
+	background: black;
+	border: 1.5px dashed #0f0;
+	width: 50pt;
+	text-align: center;
+}
+
+.default_input:hover {
+	background: white;
+	color: black;
+	border-radius: 11px;
+	transition-duration: all 0.7s;
+	width: 70pt;
+}
+
+.default_input:disabled {
+	height: 18pt;
+	transition-duration: 0.4s;
+	background: grey;
+	border: 1.5px solid #0f0;
+	border-radius: 11px;
+}
+
+/* disable outline when focused */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+body {
+	background-color: #000;
+}
+
+p, label, li, h1, td, span {
+	color: #0f0;
+	font-family: courier new;
+}
+
+p {
+	height: 10pt;
+}
+
+select {
+	background-color: black;
+	color: #0f0;
+	border: 1px dashed #0f0;
+	font-family: courier new;
+	font-size: 14pt;
+	transition-duration: 0.4s;
+	text-align: center;
+}
+
+select:hover {
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+}
+
+button {
+	font-family: courier new;
+	padding: 10px;
+	font-size: 12pt;
+}
+
+button:hover {
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:disabled {
+	cursor: not-allowed;
+}
+
+#naslov {
+	font-size: 32pt;
+	text-align: center;
+}
+
+#meni {
+	text-align: center;
+}
+
+td {
+	border: 1px solid #0f0;
+	width: 40px;
+	height: 50px;
+	font-size: 18pt;
+	vertical-align: center;
+}
+
+tr {
+	border: 1px dashed #0f0;
+}
+
+span:hover {
+	cursor: pointer;
+}
+
+.poslednji_td {
+	width: auto;
+	text-align: left;
+	font-size: 16pt;
+}
+
+table {
+	display: none;
+	align-self: center;
+	border: 1px dashed #0f0;
+	background: linear-gradient(black 50%, purple);
+}
+
+#content {
+	display: none;
+}
+
+#tabela_div {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+#settings {
+	text-align: center;
+}
+
+#nBrojeva_span, #nKolona_span, #nRedova_span {
+	font-size: 24pt;
+	color: cyan;
+	padding-left: 3pt;
+}
+
+.nm {
+	color: cyan;
+}
+
+.nnm {
+	color: red;
+}
+
+label {
+	font-size: 14pt;
+}
+
+.settings_p {
+	font-size: 18pt;
+	color: orange;
+	transition-duration: 0.4s;
+}
+
+.settings_p:hover {
+	font-size: 19pt;
+	color: cyan;
+}
+
+#mikac_inc {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#scorpio {
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.brojevi_span:hover {
+	color: red;
+}
+
+#pravila_div {
+	color: #0f0;
+	font-family: courier new;
+	display: none;
+	border: 1px dashed #0f0;
+	width: 33%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Progress - Vreme */
+
+#parent_div {
+	background: grey;
+	height: 30px;
+	border-radius: 10px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#child_div {
+	background: #0f0;
+	height: 30px;
+	width: 0px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	transition-duration: 0.7s;
+}
