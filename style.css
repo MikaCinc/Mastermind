@@ -138,7 +138,10 @@ button:focus {
 }
 
 body {
-	background-color: #000;
+	height: 100%;
+	background: linear-gradient(black 95%, purple);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 p, label, li, h1, td, span {
