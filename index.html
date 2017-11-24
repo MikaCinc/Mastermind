@@ -21,6 +21,14 @@
 			<br>
 		</div>
 		<div id="settings">
+			<p class="settings_p">> Izaberi nivo:</p>
+			<select onchange="promena_tezine(this.value)">
+				<option>Lako</option>
+				<option selected>Normalno</option>
+				<option>Teško</option>
+				<option>Izazov</option>
+			</select>
+			<br>
 			<p class="settings_p">> Izgled tabele:</p>
 			<br>
 			<label>Broj znakova(brojeva): <input type="range" value="6" min="2" max="9" id="nBrojeva" oninput="nBrojeva(this.value)"><span id="nBrojeva_span"></span></label>
@@ -32,19 +40,12 @@
 			<label>Broj kolona: <input type="range" value="4" min="2" max="10" id="nKolona" oninput="nKolona(this.value)"><span id="nKolona_span"></span></label>
 			<br>
 			<br>
-			<p class="settings_p">> Izaberi nivo:</p>
-			<select onchange="promena_tezine(this.value)">
-				<option>Lako</option>
-				<option selected>Normalno</option>
-				<option>Teško</option>
-				<option>Izazov</option>
-			</select>
-			<br>
+			
 			<p class="settings_p">> Vremensko ograničenje:</p>
 			<label>Uključi: <input type="radio" name="vreme_radio" checked onchange="vreme_isk_uk()"></label>
 			<label>Isključi: <input type="radio" name="vreme_radio" onchange="vreme_isk_uk()"></label>
 			<br>
-			<input type="number" min="1" max="250" id="vrem_ogr_input" class="default_input" value="50"><span>s</span>
+			<input type="number" min="1" max="250" id="vrem_ogr_input" class="default_input" value="90"><span>s</span>
 			<br>
 			<p class="settings_p">> Dodatna podešavanja:</p>
 			<label>Prikazuj mi samo aktuelni red u tabeli: <input type="checkbox" id="aktuelni_red"></label>
@@ -69,6 +70,6 @@
 		</div>
 		
 		<p id="mikac_inc">by: <b><span id="mikac_inc_span"></span></b></p>
-		<p id="scorpio">Verzija: 0.1.0.0 / Project: //Scorpio/ © .</p>
+		<p id="scorpio">Verzija: 0.1.0.1 / Project: //Scorpio/ © .</p>
 	</body>
 </html>
