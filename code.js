@@ -2,9 +2,13 @@ window.onload = function() {
 	// Pravila
 	document.getElementById("pravila").addEventListener("mouseover", function() {
 		document.getElementById("pravila_div").style.display = "block"
+		document.body.style.background = "linear-gradient(black 40%, orange)" 
+		document.body.style.backgroundAttachment = "fixed" 
 	})
 	document.getElementById("pravila").addEventListener("mouseout", function() {
 		document.getElementById("pravila_div").style.display = "none"
+		document.body.style.background = "linear-gradient(black 95%, purple)" 
+		document.body.style.backgroundAttachment = "fixed" 
 	})
 	// Animiramo naslov
 	var s = document.getElementById('naslov').innerHTML
@@ -204,32 +208,17 @@ function novo() {
 						this.parentElement.innerHTML = "<span class='nm'>Na mestu: </span>" + nm + "<br>" + "<span class='nnm'>Nisu na mestu: </span>" + nnm;
 						table_V += 1;
 						table_visibility(table_V)
-						nm = 0
-						nnm = 0
-						user = []
-						cpu = []
-						console.log(cpu1)
-						for(var u=0; u<cpu1.length; u++){
-							var arr = []
-							arr.push(cpu1[u])
-							arr.push(false)
-							arr.push(false)
-							cpu.push(arr)
-							console.log("CPU REGENERISAN")
+						if(nm == 4){
+							if(confirm("Čestitamo, pogodili ste kombinaciju! Da li želite da igrate ponovo sa istim podešavanjima?") == true){
+								change("Reset", true)
+							} else {
+								change("Druga podešavanja", true)
+							}
 						}
+						regeneriši()
+					
 					} else {
-						nm = 0
-						nnm = 0
-						user = []
-						cpu = []
-						for(var u=0; u<cpu1.length; u++){
-							var arr = []
-							arr.push(cpu1[u])
-							arr.push(false)
-							arr.push(false)
-							cpu.push(arr)
-							console.log("CPU REGENERISAN")
-						}
+						regeneriši()
 					}
 				}
 				
@@ -242,6 +231,22 @@ function novo() {
 		document.getElementById('table').appendChild(tr)
 	}
 	table_visibility(table_V)
+
+	function regeneriši() {
+		nm = 0
+		nnm = 0
+		user = []
+		cpu = []
+		console.log(cpu1)
+		for(var u=0; u<cpu1.length; u++){
+			var arr = []
+			arr.push(cpu1[u])
+			arr.push(false)
+			arr.push(false)
+			cpu.push(arr)
+			console.log("CPU REGENERISAN")
+		}
+	}
 }
 
 function getAllIndexes(n, arr) {
@@ -348,32 +353,39 @@ function vreme() {
 			document.getElementById("child_div").style.background = "red"
 		}
 		if(document.getElementById("child_div").style.width == "0px"){
-			alert("Vreme isteklo!")
-			clearInterval(interval)
+			if(confirm("Vreme je isteklo! Pokušaj ponovo sa istim podešavanjima?") == true){
+				change("Reset", true)
+			} else {
+				change("Druga podešavanja", true)
+			}
 		}
 	}, 1000)
 }
 
 // Promena sadržaja
 
-function change(name) {
+function change(name, dane) {
 	if(name == "Nova igra") {
 		document.getElementById("content").style.display = "block"
 		document.getElementById("settings").style.display = "none"
 		novo()
 		document.getElementById("reset").disabled = false
 	} else if(name == "Druga podešavanja") {
-		document.getElementById("content").style.display = "none"
-		document.getElementById("settings").style.display = "block"
-		clearInterval(interval)
-		document.getElementById("reset").disabled = true
-		document.getElementById("table").innerHTML = ""
-		document.getElementById("child_div").style.width = "0px"
-		document.getElementById("child_div").style.background = "#0f0"
+		if(dane == true || confirm("Da li si siguran? Trenutna igra će biti resetovana") == true){
+			document.getElementById("content").style.display = "none"
+			document.getElementById("settings").style.display = "block"
+			clearInterval(interval)
+			document.getElementById("reset").disabled = true
+			document.getElementById("table").innerHTML = ""
+			document.getElementById("child_div").style.width = "0px"
+			document.getElementById("child_div").style.background = "#0f0"
+		}
 	} else if(name == "Reset") {
-		clearInterval(interval)
-		document.getElementById("table").innerHTML = ""
-		novo()
+		if(dane == true || confirm("Da li si siguran? Trenutna igra će biti resetovana") == true){
+			clearInterval(interval)
+			document.getElementById("table").innerHTML = ""
+			novo()
+		}
 	}
 }
 
@@ -420,7 +432,7 @@ function promena_tezine(value) {
 		document.getElementById("obelezi_polja").checked = false
 		document.getElementsByName("vreme_radio")[0].checked = true
 		vreme_isk_uk()
-		document.getElementById("vrem_ogr_input").value = 50
+		document.getElementById("vrem_ogr_input").value = 90
 		document.getElementById("aktuelni_red").checked = false
 	} else if(value == "Izazov"){
 		document.getElementById("nBrojeva").value = 8
