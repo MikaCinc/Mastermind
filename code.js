@@ -334,15 +334,16 @@ function vreme_isk_uk(){
 }
 
 function vreme() {
+	console.log(document.getElementById("child_div").style.width)
 	var value = document.getElementById("vrem_ogr_input").value
 	var smanjenje = 400/value
 	if(document.getElementById("child_div").style.width = "400px"){
 		document.getElementById("child_div").style.background = "#0f0"
 	}
-	var new_width = 400 - smanjenje
+	var new_width = 400
 	interval = setInterval(function() {
-		document.getElementById("child_div").style.width = new_width + "px"
 		new_width -= smanjenje
+		document.getElementById("child_div").style.width = new_width + "px"
 		if(new_width <= 400*75/100){
 			document.getElementById("child_div").style.background = "cyan"
 		}
@@ -352,7 +353,7 @@ function vreme() {
 		if(new_width <= 400*25/100){
 			document.getElementById("child_div").style.background = "red"
 		}
-		if(document.getElementById("child_div").style.width == "0px"){
+		if(new_width <= 0){
 			if(confirm("Vreme je isteklo! Pokušaj ponovo sa istim podešavanjima?") == true){
 				change("Reset", true)
 			} else {
